@@ -7,4 +7,8 @@ pub mod payments {
     tonic::include_proto!("payments");
 }
 
+#[derive(Debug, Default)]
+pub struct BitcoinService {}
+
+
 fn main() {}
