@@ -36,5 +36,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "[::1]:50051".parse()?;
     let btc_service = BitcoinService::default();
     
+    Server::builder()
+        .add_service(BitcoinServer::new(btc_service))
+        .serve(addr)
+        .await?;
+        
     Ok(())
 }
