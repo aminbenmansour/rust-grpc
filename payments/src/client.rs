@@ -18,6 +18,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             amount: 24,
         }
     );
+
+    let response = client.send_payment(request).await?;
+    println!("Response={:?}", response);
     
     Ok(())
 }
