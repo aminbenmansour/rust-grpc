@@ -7,5 +7,8 @@ pub mod payments {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let mut client = BitcoinClient::connect(
+        "http://[::1]:50051"
+    ).await?;
     Ok(())
 }
